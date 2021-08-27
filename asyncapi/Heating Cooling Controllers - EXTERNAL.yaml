@@ -1,0 +1,181 @@
+components:
+  schemas:
+    OperationalAlert:
+      default: {}
+      $schema: 'http://json-schema.org/draft-07/schema'
+      examples:
+        - severity: Medium
+          alertType: HighTemperature
+          city: Hopkinton
+          temperature: 99.3
+          lat: -71.518929
+          long: -71.518929
+      description: The root schema comprises the entire JSON document.
+      additionalProperties: true
+      type: object
+      title: The root schema
+      required:
+        - lat
+        - long
+        - city
+        - alertType
+        - severity
+        - temperature
+      properties:
+        severity:
+          default: ''
+          examples:
+            - Medium
+          description: An explanation about the purpose of this instance.
+          type: string
+          title: The severity schema
+          $id: '#/properties/severity'
+        alertType:
+          default: ''
+          examples:
+            - HighTemperature
+          description: An explanation about the purpose of this instance.
+          type: string
+          title: The alertType schema
+          $id: '#/properties/alertType'
+        city:
+          default: ''
+          examples:
+            - Hopkinton
+          description: An explanation about the purpose of this instance.
+          type: string
+          title: The city schema
+          $id: '#/properties/city'
+        temperature:
+          default: 0
+          examples:
+            - 99.3
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The temperature schema
+          $id: '#/properties/temperature'
+        lat:
+          default: 0
+          examples:
+            - -71.518929
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The lat schema
+          $id: '#/properties/lat'
+        long:
+          default: 0
+          examples:
+            - -71.518929
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The long schema
+          $id: '#/properties/long'
+      $id: 'http://example.com/example.json'
+    TemperatureReading:
+      default: {}
+      $schema: 'http://json-schema.org/draft-07/schema'
+      examples:
+        - m_cpu_load: 3.0550130208333335
+          m_city: San Francisco
+          m_latitude: 13.04302978515625
+          m_longitude: 80.27391815185547
+          m_cpu_temp: 55.6875
+      description: The root schema comprises the entire JSON document.
+      additionalProperties: true
+      type: object
+      title: The root schema
+      required:
+        - m_city
+        - m_cpu_temp
+        - m_cpu_load
+        - m_latitude
+        - m_longitude
+      properties:
+        m_cpu_load:
+          default: 0
+          examples:
+            - 3.0550130208333335
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The m_cpu_load schema
+          $id: '#/properties/m_cpu_load'
+        m_city:
+          default: ''
+          examples:
+            - San Francisco
+          description: An explanation about the purpose of this instance.
+          type: string
+          title: The m_city schema
+          $id: '#/properties/m_city'
+        m_latitude:
+          default: 0
+          examples:
+            - 13.04302978515625
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The m_latitude schema
+          $id: '#/properties/m_latitude'
+        m_longitude:
+          default: 0
+          examples:
+            - 80.27391815185547
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The m_longitude schema
+          $id: '#/properties/m_longitude'
+        m_cpu_temp:
+          default: 0
+          examples:
+            - 55.6875
+          description: An explanation about the purpose of this instance.
+          type: number
+          title: The m_cpu_temp schema
+          $id: '#/properties/m_cpu_temp'
+      $id: 'http://example.com/example.json'
+  messages:
+    OperationalAlert:
+      payload:
+        $ref: '#/components/schemas/OperationalAlert'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+    TemperatureReading:
+      payload:
+        $ref: '#/components/schemas/TemperatureReading'
+      description: ''
+      schemaFormat: application/vnd.aai.asyncapi+json;version=2.0.0
+      contentType: application/json
+channels:
+  'SmartTown/Operations/OperationalAlert/created/v1/{AlertPriority}/{AlertType}':
+    subscribe:
+      x-scs-function-name: processTemperatureReading
+      message:
+        $ref: '#/components/messages/OperationalAlert'
+    parameters:
+      AlertType:
+        schema:
+          type: string
+      AlertPriority:
+        schema:
+          type: string
+  'SmartTown/Operations/temperatureReading/created/v1/{city}/{latitude}/{longitude}':
+    publish:
+      x-scs-function-name: processTemperatureReading
+      message:
+        $ref: '#/components/messages/TemperatureReading'
+    parameters:
+      city:
+        schema:
+          type: string
+      latitude:
+        schema:
+          type: string
+      longitude:
+        schema:
+          type: string
+asyncapi: 2.0.0
+info:
+  x-view: provider
+  description: ''
+  title: Heating Cooling Controllers - EXTERNAL
+  version: 0.0.1
