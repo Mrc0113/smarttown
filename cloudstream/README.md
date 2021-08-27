@@ -1,8 +1,6 @@
 # Smart Town Workshop
 
-You have everything here to complete the workshop with the help of codelab [XX].
-
-At the end of this exercise, you would have built microservices that demonstrates a smart town function of collecting IoT sensor data, monitoring device temperatures and generating alerts.
+A completed microservices refereed in this workshop.
 
 ### Microservices
 

@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    function:
+      definition: processTemperatureReading
+    stream:
+      bindings:
+        processTemperatureReading-out-0:
+          destination: 'SmartTown/Operations/OperationalAlert/created/v1/{AlertPriority}/{AlertType}'
+        processTemperatureReading-in-0:
+          destination: SmartTown/Operations/temperatureReading/created/v1/*/*/*
+      binders:
+        solace-binder:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: <enter solace host url> # e.g., 'tcp://xxxxx.messaging.solace.cloud:55555'
+                msgVpn: springone-2021
+                clientUsername: smarttown
+                clientPassword: smarttown
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+
