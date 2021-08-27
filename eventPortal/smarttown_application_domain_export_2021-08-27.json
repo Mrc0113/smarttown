@@ -1,0 +1,378 @@
+{
+  "applicationDomains": [
+    {
+      "createdTime": 1629828976812,
+      "updatedTime": 1629828991554,
+      "createdBy": "2ko4lk2qe58f",
+      "changedBy": "2ko4lk2qe58f",
+      "id": "okygh0wcbc5",
+      "name": "SmartTown - Analytics",
+      "topicDomain": "SmartTown/Analytics",
+      "description": "",
+      "enforceUniqueTopicNames": true,
+      "applications": [
+        {
+          "createdTime": 1629829158171,
+          "updatedTime": 1629829158171,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "t7rr6n9ig1t",
+          "name": "Smart Town Analytics Engine",
+          "version": "0.0.1",
+          "description": "",
+          "applicationDomainId": "okygh0wcbc5",
+          "producedEventIds": [],
+          "consumedEventIds": [
+            "ty9jcl0xp3e",
+            "wjyx6h17sud"
+          ],
+          "revisionNumber": 1,
+          "applicationClass": "unspecified",
+          "endpoints": [],
+          "type": "application"
+        }
+      ],
+      "type": "applicationDomain"
+    },
+    {
+      "createdTime": 1629815232433,
+      "updatedTime": 1629815232433,
+      "createdBy": "2ko4lk2qe58f",
+      "changedBy": "2ko4lk2qe58f",
+      "id": "rfbeaaafkon",
+      "name": "SmartTown - Operations",
+      "topicDomain": "SmartTown/Operations",
+      "description": "",
+      "enforceUniqueTopicNames": true,
+      "schemas": [
+        {
+          "createdTime": 1629815232438,
+          "updatedTime": 1629815232438,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "zyu1nvt9pb8",
+          "name": "OperationalAlert",
+          "shared": true,
+          "description": "",
+          "contentType": "JSON",
+          "content": "{\n    \"$schema\": \"http://json-schema.org/draft-07/schema\",\n    \"$id\": \"http://example.com/example.json\",\n    \"type\": \"object\",\n    \"title\": \"The root schema\",\n    \"description\": \"The root schema comprises the entire JSON document.\",\n    \"default\": {},\n    \"examples\": [\n        {\n            \"lat\": -71.518929,\n            \"long\": -71.518929,\n            \"city\": \"Hopkinton\",\n            \"alertType\": \"HighTemperature\",\n            \"severity\": \"Medium\",\n            \"temperature\": 99.3\n        }\n    ],\n    \"required\": [\n        \"lat\",\n        \"long\",\n        \"city\",\n        \"alertType\",\n        \"severity\",\n        \"temperature\"\n    ],\n    \"properties\": {\n        \"lat\": {\n            \"$id\": \"#/properties/lat\",\n            \"type\": \"number\",\n            \"title\": \"The lat schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                -71.518929\n            ]\n        },\n        \"long\": {\n            \"$id\": \"#/properties/long\",\n            \"type\": \"number\",\n            \"title\": \"The long schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                -71.518929\n            ]\n        },\n        \"city\": {\n            \"$id\": \"#/properties/city\",\n            \"type\": \"string\",\n            \"title\": \"The city schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"Hopkinton\"\n            ]\n        },\n        \"alertType\": {\n            \"$id\": \"#/properties/alertType\",\n            \"type\": \"string\",\n            \"title\": \"The alertType schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"HighTemperature\"\n            ]\n        },\n        \"severity\": {\n            \"$id\": \"#/properties/severity\",\n            \"type\": \"string\",\n            \"title\": \"The severity schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": \"\",\n            \"examples\": [\n                \"Medium\"\n            ]\n        },\n        \"temperature\": {\n            \"$id\": \"#/properties/temperature\",\n            \"type\": \"number\",\n            \"title\": \"The temperature schema\",\n            \"description\": \"An explanation about the purpose of this instance.\",\n            \"default\": 0.0,\n            \"examples\": [\n                99.3\n            ]\n        }\n    },\n    \"additionalProperties\": true\n}",
+          "applicationDomainId": "rfbeaaafkon",
+          "revisionNumber": 1,
+          "versions": [],
+          "type": "schema"
+        },
+        {
+          "createdTime": 1629815232438,
+          "updatedTime": 1629815232438,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "g7946de861e",
+          "name": "TemperatureReading",
+          "shared": true,
+          "description": "",
+          "contentType": "JSON",
+          "content": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema\",\n  \"$id\": \"http://example.com/example.json\",\n  \"type\": \"object\",\n  \"title\": \"The root schema\",\n  \"description\": \"The root schema comprises the entire JSON document.\",\n  \"default\": {},\n  \"examples\": [\n    {\n      \"m_city\": \"San Francisco\",\n      \"m_cpu_temp\": 55.6875,\n      \"m_cpu_load\": 3.0550130208333335,\n      \"m_latitude\": 13.04302978515625,\n      \"m_longitude\": 80.27391815185547\n    }\n  ],\n  \"required\": [\n    \"m_city\",\n    \"m_cpu_temp\",\n    \"m_cpu_load\",\n    \"m_latitude\",\n    \"m_longitude\"\n  ],\n  \"properties\": {\n    \"m_city\": {\n      \"$id\": \"#/properties/m_city\",\n      \"type\": \"string\",\n      \"title\": \"The m_city schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": \"\",\n      \"examples\": [\n        \"San Francisco\"\n      ]\n    },\n    \"m_cpu_temp\": {\n      \"$id\": \"#/properties/m_cpu_temp\",\n      \"type\": \"number\",\n      \"title\": \"The m_cpu_temp schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        55.6875\n      ]\n    },\n    \"m_cpu_load\": {\n      \"$id\": \"#/properties/m_cpu_load\",\n      \"type\": \"number\",\n      \"title\": \"The m_cpu_load schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        3.0550130208333335\n      ]\n    },\n    \"m_latitude\": {\n      \"$id\": \"#/properties/m_latitude\",\n      \"type\": \"number\",\n      \"title\": \"The m_latitude schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        13.04302978515625\n      ]\n    },\n    \"m_longitude\": {\n      \"$id\": \"#/properties/m_longitude\",\n      \"type\": \"number\",\n      \"title\": \"The m_longitude schema\",\n      \"description\": \"An explanation about the purpose of this instance.\",\n      \"default\": 0,\n      \"examples\": [\n        80.27391815185547\n      ]\n    }\n  },\n  \"additionalProperties\": true\n}",
+          "applicationDomainId": "rfbeaaafkon",
+          "revisionNumber": 1,
+          "versions": [],
+          "type": "schema"
+        }
+      ],
+      "events": [
+        {
+          "createdTime": 1629815232452,
+          "updatedTime": 1629815232452,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "ty9jcl0xp3e",
+          "name": "OperationalAlert",
+          "version": "0.0.1",
+          "shared": true,
+          "description": "",
+          "schemaId": "zyu1nvt9pb8",
+          "schemaVersionId": null,
+          "keySchemaId": null,
+          "keySchemaVersionId": null,
+          "applicationDomainId": "rfbeaaafkon",
+          "revisionNumber": 1,
+          "keyPrimitivePayloadType": null,
+          "valuePrimitivePayloadType": null,
+          "topicAddress": {
+            "id": "0bl58ce15nd",
+            "virtualBrokerId": "22fraf7wyxgn",
+            "topicAddressLevels": [
+              {
+                "id": "o3c3icbowtw",
+                "consumable": false,
+                "name": "SmartTown",
+                "displayName": "SmartTown",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "a54ga3c49f8",
+                "consumable": false,
+                "name": "Operations",
+                "displayName": "Operations",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "mjj2mytadna",
+                "consumable": false,
+                "name": "OperationalAlert",
+                "displayName": "operationalAlert",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "oj12woo7so0",
+                "consumable": false,
+                "name": "created",
+                "displayName": "created",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "xrabh7esf8u",
+                "consumable": false,
+                "name": "v1",
+                "displayName": "v1",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "eltx86sdfw4",
+                "consumable": false,
+                "name": "AlertPriority",
+                "displayName": "AlertPriority",
+                "topicNodeType": "variable",
+                "type": "topicNode"
+              },
+              {
+                "id": "vhf9mvh0x4j",
+                "consumable": true,
+                "name": "AlertType",
+                "displayName": "Alert Type",
+                "topicNodeType": "variable",
+                "type": "topicNode"
+              }
+            ],
+            "type": "topicAddress"
+          },
+          "type": "event"
+        },
+        {
+          "createdTime": 1629815232472,
+          "updatedTime": 1629815232472,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "wjyx6h17sud",
+          "name": "TemperatureReading",
+          "version": "0.0.1",
+          "shared": true,
+          "description": "",
+          "schemaId": "g7946de861e",
+          "schemaVersionId": null,
+          "keySchemaId": null,
+          "keySchemaVersionId": null,
+          "applicationDomainId": "rfbeaaafkon",
+          "revisionNumber": 1,
+          "keyPrimitivePayloadType": null,
+          "valuePrimitivePayloadType": null,
+          "topicAddress": {
+            "id": "gsmknxk192a",
+            "virtualBrokerId": "22fraf7wyxgn",
+            "topicAddressLevels": [
+              {
+                "id": "o3c3icbowtw",
+                "consumable": false,
+                "name": "SmartTown",
+                "displayName": "SmartTown",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "a54ga3c49f8",
+                "consumable": false,
+                "name": "Operations",
+                "displayName": "Operations",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "8m96b0p7ie7",
+                "consumable": false,
+                "name": "temperatureReading",
+                "displayName": "TemperatureReading",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "8xd2fmdi77c",
+                "consumable": false,
+                "name": "created",
+                "displayName": "created",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "muskjzekdqi",
+                "consumable": false,
+                "name": "v1",
+                "displayName": "v1",
+                "description": "",
+                "children": [],
+                "topicNodeType": "literal",
+                "type": "topicNode"
+              },
+              {
+                "id": "xxyjgj0cjif",
+                "consumable": false,
+                "name": "city",
+                "displayName": "city",
+                "topicNodeType": "variable",
+                "type": "topicNode"
+              },
+              {
+                "id": "c1eqfbazkom",
+                "consumable": false,
+                "name": "latitude",
+                "displayName": "latitude",
+                "topicNodeType": "variable",
+                "type": "topicNode"
+              },
+              {
+                "id": "bnapjpp3s46",
+                "consumable": true,
+                "name": "longitude",
+                "displayName": "longitude",
+                "topicNodeType": "variable",
+                "type": "topicNode"
+              }
+            ],
+            "type": "topicAddress"
+          },
+          "type": "event"
+        }
+      ],
+      "applications": [
+        {
+          "createdTime": 1629815232512,
+          "updatedTime": 1629815232512,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "mdmft6i4ghd",
+          "name": "Maintenance Ticketing System",
+          "version": "0.0.1",
+          "description": "",
+          "applicationDomainId": "rfbeaaafkon",
+          "producedEventIds": [],
+          "consumedEventIds": [
+            "ty9jcl0xp3e"
+          ],
+          "revisionNumber": 1,
+          "applicationClass": "unspecified",
+          "endpoints": [],
+          "type": "application"
+        },
+        {
+          "createdTime": 1629815232512,
+          "updatedTime": 1629815232512,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "0poy9ffain3",
+          "name": "Heating Cooling Controllers - EXTERNAL",
+          "version": "0.0.1",
+          "description": "",
+          "applicationDomainId": "rfbeaaafkon",
+          "producedEventIds": [
+            "ty9jcl0xp3e"
+          ],
+          "consumedEventIds": [
+            "wjyx6h17sud"
+          ],
+          "revisionNumber": 1,
+          "applicationClass": "unspecified",
+          "endpoints": [],
+          "type": "application"
+        },
+        {
+          "createdTime": 1629815232512,
+          "updatedTime": 1629815232512,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "o8r81rgm5u1",
+          "name": "Temperature Sensors",
+          "version": "0.0.1",
+          "description": "",
+          "applicationDomainId": "rfbeaaafkon",
+          "producedEventIds": [
+            "wjyx6h17sud"
+          ],
+          "consumedEventIds": [],
+          "revisionNumber": 1,
+          "applicationClass": "unspecified",
+          "endpoints": [],
+          "type": "application"
+        },
+        {
+          "createdTime": 1629815232512,
+          "updatedTime": 1629815232512,
+          "createdBy": "2ko4lk2qe58f",
+          "changedBy": "2ko4lk2qe58f",
+          "id": "qb4hpae3kdc",
+          "name": "Operations Dashboard",
+          "version": "0.0.1",
+          "description": "",
+          "applicationDomainId": "rfbeaaafkon",
+          "producedEventIds": [],
+          "consumedEventIds": [
+            "ty9jcl0xp3e"
+          ],
+          "revisionNumber": 1,
+          "applicationClass": "unspecified",
+          "endpoints": [],
+          "type": "application"
+        }
+      ],
+      "type": "applicationDomain"
+    }
+  ],
+  "virtualBrokers": [
+    {
+      "createdTime": 1618067179254,
+      "updatedTime": 1618067179254,
+      "createdBy": "1",
+      "changedBy": "1",
+      "id": "22fraf7wyxgn",
+      "name": "Default Event Mesh",
+      "description": "The default Event Mesh",
+      "brokerType": "unspecified",
+      "levelDelimiter": "/",
+      "topicNodes": [],
+      "type": "virtualBroker"
+    }
+  ],
+  "topicValueSets": [],
+  "formatVersion": "1",
+  "type": "ApplicationDomainExport"
+}
