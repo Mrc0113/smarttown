@@ -1,0 +1,16 @@
+# Solace
+solace:
+  :transport_type: 1
+  :jndi_name: "/jms/cf/default"
+  :jndi_context:
+    java.naming.factory.initial: com.solacesystems.jndi.SolJNDIInitialContextFactory
+    java.naming.security.principal: smarttown@springone-2021 
+    java.naming.provider.url: "tcp://mrnsau5ltlr4o.messaging.solace.cloud:55555"
+    java.naming.security.credentials: 
+  :require_jars:
+    - /usr/local/etc/logstash/soljars/commons-lang-2.6.jar
+    - /usr/local/etc/logstash/soljars/commons-logging-1.2.jar
+    - /usr/local/etc/logstash/soljars/geronimo-jms_1.1_spec-1.1.1.jar
+    - /usr/local/etc/logstash/soljars/sol-common-10.12.0.jar
+    - /usr/local/etc/logstash/soljars/sol-jcsmp-10.12.0.jar
+    - /usr/local/etc/logstash/soljars/sol-jms-10.12.0.jar
