@@ -43,8 +43,8 @@ public class Application {
 		    Sensors sensors = hal.getSensors();
 		    CentralProcessor processor = hal.getProcessor();
 	        double[] loadAverage = processor.getSystemLoadAverage(1);
-            BigDecimal cpuTemp = new BigDecimal(sensors.getCpuTemperature());	
-            BigDecimal cpuLoad = new BigDecimal((loadAverage[0] < 0 ? 0 : loadAverage[0]));
+			BigDecimal cpuLoad = new BigDecimal((loadAverage[0] < 0 ? 0 : loadAverage[0]));
+			BigDecimal cpuTemp = new BigDecimal(50.0 + cpuLoad.doubleValue() * 8.0);
 		    
 			// TODO: Construct the topic name with alert type and priority as per the Topic hierarchy design
             // 		SmartTown/Operations/temperatureReading/created/v1/{city}/{latitude}/{longitude}
