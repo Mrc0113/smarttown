@@ -16,7 +16,6 @@ import org.springframework.messaging.Message;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.HardwareAbstractionLayer;
-import oshi.hardware.Sensors;
 
 @SpringBootApplication
 public class Application {
@@ -40,7 +39,6 @@ public class Application {
 			// Collect CPU metrics 
 	        SystemInfo si = new SystemInfo();
 	        HardwareAbstractionLayer hal = si.getHardware();
-		    Sensors sensors = hal.getSensors();
 		    CentralProcessor processor = hal.getProcessor();
 	        double[] loadAverage = processor.getSystemLoadAverage(1);
 			BigDecimal cpuLoad = new BigDecimal((loadAverage[0] < 0 ? 0 : loadAverage[0]));
@@ -48,7 +46,7 @@ public class Application {
 		    
 			// TODO: Construct the topic name with alert type and priority as per the Topic hierarchy design
             // 		SmartTown/Operations/temperatureReading/created/v1/{city}/{latitude}/{longitude}
-	        String topic = "";	        			
+	        String topic = "SmartTown/Operations/temperatureReading/created/v1/" + city + "/" + latitude + "/" + longitude;	        			
 			TemperatureReading data = new TemperatureReading(cpuLoad, city, latitude, longitude, cpuTemp);
 			
 			logger.info(data.toString());	
