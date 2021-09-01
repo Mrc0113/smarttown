@@ -1,4 +1,4 @@
-	package com.springone.asyncapi.datacollector;
+package com.springone.asyncapi.datacollector;
 
 import java.math.BigDecimal;
 import java.util.function.Supplier;
@@ -44,7 +44,7 @@ public class Application {
 			BigDecimal cpuLoad = new BigDecimal((loadAverage[0] < 0 ? 0 : loadAverage[0]));
 			BigDecimal cpuTemp = new BigDecimal(50.0 + cpuLoad.doubleValue() * 8.0);
 		    
-			// TODO: Construct the topic name with alert type and priority as per the Topic hierarchy design
+			// Construct the topic name with alert type and priority as per the Topic hierarchy design
             // 		SmartTown/Operations/temperatureReading/created/v1/{city}/{latitude}/{longitude}
 	        String topic = "SmartTown/Operations/temperatureReading/created/v1/" + city + "/" + latitude + "/" + longitude;	        			
 			TemperatureReading data = new TemperatureReading(cpuLoad, city, latitude, longitude, cpuTemp);
