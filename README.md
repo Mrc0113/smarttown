@@ -1,45 +1,7 @@
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
-
 # Smart Town Workshop
+This workshop contains the materials used during the SpringOne 2021 Developer Workshop for Solace. 
+The instructions and more context are available in the [codelab](https://codelabs.solace.dev/codelabs/springone-2021-asyncapi-workshop/index.html?index=..%2F..index#0)
 
-## What does this demonstrate?
-Please specify what is this demo about ...
-
-### Cloud Services Used
-List of cloud services uses in this demo if any ...
-
-  
-### Solace PubSub+ features used
-List of PubSub+ features used ...
-
-**Try the live demo in action here:
-http://london.solace.com/cloud-analytics/machine-learning.html**
-
-### Other Useful Links
-List of links to useful resources ...
-
-
-## Contents
-
-What does this repostiory contain ...
-
-
-## Checking out
-
-To check out the project, clone this GitHub repository:
-
-```
-git clone https://github.com/solacese/github-demo
-cd <github-demo>
-```
-
-## Running the Demo
-
-To run the demo open:
-
-```
-commands to run the demo go here ...
-```
 
 ## Contributing
 
