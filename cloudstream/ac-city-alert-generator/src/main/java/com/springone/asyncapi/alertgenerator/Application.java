@@ -25,8 +25,7 @@ public class Application {
 	public Function<TemperatureReading, Message<OperationalAlert>> processTemperatureReading() {
 		return data -> {
 			// Add business logic here.
-			logger.info(data.toString());
-			
+
 			// NOTE: A return value of null indicates that no message will be published to the Broker 
 			if (data.getMCpuTemp().doubleValue() <= 60)
 				return null;
@@ -52,7 +51,8 @@ public class Application {
 			OperationalAlert payload = new OperationalAlert(alertPriority, alertType, data.getMCity(), data.getMCpuTemp(), 
 															data.getMLatitude(), data.getMLongitude());
 			
-			
+		    logger.info("Operational Alert: \n" + payload.toString());
+
 			// Add OperationalAlert as type parameter to Message declaration (AsyncAPI codegen will fix this soon)
 			Message<OperationalAlert> message = MessageBuilder
 				.withPayload(payload)
